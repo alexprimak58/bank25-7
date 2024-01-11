@@ -1,0 +1,913 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+/* scroll */
+::-webkit-scrollbar {
+  background-color: #fff;
+  width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+/* scrollbar itself */
+::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+  border: 4px solid #fff;
+}
+
+/* set button(top and bottom of the scrollbar) */
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e1e1e;
+}
+/* end of scroll */
+/* login/signup */
+.fullscreen-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(90, 90, 90, 0.5);
+  z-index: 800;
+}
+.forms-wrapper {
+  margin: auto;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  background: #1e1e1e;
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1000;
+  padding: 2rem;
+  width: 40rem;
+  height: 40rem;
+}
+.x-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-heading {
+  color: #fff;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 8rem;
+}
+.field {
+  width: 80%;
+  height: 4rem;
+  margin-bottom: 3rem;
+  border-bottom: 0.2rem solid #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.email-field {
+  margin-bottom: 3rem;
+}
+.password-field {
+  margin-bottom: 1rem;
+}
+.img-lock {
+  padding-left: 0.3rem;
+}
+
+.form-input {
+  background: transparent;
+  outline: none;
+  border: none;
+  height: 3rem;
+  font-family: "NTR", sans-serif;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.96px;
+  padding-left: 1.1rem;
+  width: 86%;
+}
+/* .password-field {
+  margin-bottom: 10rem;
+} */
+.form-btn {
+  margin-top: 5rem;
+}
+.wrong-passwd-or-email {
+  font-family: "NTR", sans-serif;
+  color: #ff0000;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.96px;
+  text-transform: uppercase;
+}
+.form-input:active {
+  outline: none;
+}
+.form-btn {
+  border-radius: 20px;
+  border: 2px solid #fff;
+  background: transparent;
+  width: 35%;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0.8rem 0;
+  cursor: pointer;
+}
+.form-btn:hover {
+  transition: all 0.3s 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform: translateY(-10%) scale(1.05);
+}
+/* end of login/signup */
+.container {
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr) repeat(2, minmax(min-content, 64rem)) minmax(
+      6rem,
+      1fr
+    );
+  grid-template-rows: min-content, 70hv;
+  grid-row-gap: 8.8rem;
+  margin-top: 5.1rem;
+  margin-bottom: 5.1rem;
+}
+/* header */
+.header-content {
+  height: 9.2rem;
+  box-sizing: border-box;
+  grid-column: 2/4;
+  grid-row: 1/2;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(10rem, 1fr));
+  justify-items: center;
+}
+.header-block-1,
+.header-block-2,
+.header-block-3 {
+  box-sizing: border-box;
+}
+.header-block-1 {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  width: 23rem;
+  border: 0.2rem solid #1e1e1e;
+  padding: 0.8rem 0 0 3rem;
+}
+.header-balance-text {
+  font-size: 3.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 0.32rem;
+}
+.header-balance-value {
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 400;
+  align-items: center;
+}
+.balance-value {
+  cursor: pointer;
+}
+.header-balance-dollar {
+  font-size: 1.6rem;
+  padding-right: 0.3rem;
+}
+.header-block-2 {
+  display: flex;
+  padding-left: 3rem;
+  padding-right: 5.5rem;
+  grid-column: 4/8;
+  grid-row: 1/2;
+  width: 50rem;
+  border: 2px solid #1e1e1e;
+  justify-content: space-between;
+}
+.logo-img {
+  padding-right: 0.5rem;
+}
+.logo-and-name,
+.header-bank-slogan,
+.header-block-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-bank-name {
+  font-size: 24px;
+  font-weight: 500;
+  color: #1e1e1e;
+  text-decoration: none;
+}
+.header-bank-slogan {
+  font-size: 20px;
+  font-weight: 400;
+}
+.header-block-3 {
+  grid-column: 9/11;
+  grid-row: 1/2;
+  width: 23rem;
+  border: 0.2rem solid #1e1e1e;
+  text-align: center;
+  /* ALSO DISABLE IT IN PAIR WITH THE CODE BELOW */
+  transition: all 0.3s 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: relative;
+}
+.header-login {
+  margin: auto 0;
+  font-size: 4.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #1e1e1e;
+}
+.login-btn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+/* HOVER EFFECT WHEN YOU ARE NOT LOGGED IN */
+.login-btn:hover {
+  background-color: #1e1e1e;
+}
+.login-btn:hover .header-login {
+  color: #fff;
+  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform: translateY(-10%) scale(1.15);
+}
+.logined-user-header {
+  display: flex;
+  flex-direction: column;
+}
+.profile-label {
+  color: #1e1e1e;
+  font-size: 32px;
+  font-weight: 400;
+}
+.label-and-log-out {
+  display: flex;
+  flex-direction: row;
+}
+.log-out-img-btn {
+  padding-left: 4rem;
+  padding-top: 1.4rem;
+  padding-bottom: 0.3rem;
+  font-size: 2.8rem;
+}
+/* .username-field {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+.username-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e1e1e;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  overflow: scroll;
+} */
+.username-field {
+  align-self: flex-start;
+}
+.username-label {
+  color: #1e1e1e;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  overflow: scroll;
+}
+.user-object {
+  text-align: center;
+}
+.username-label:not(.user-object),
+.log-out-img-btn {
+  cursor: pointer;
+}
+.user-object {
+  margin-bottom: -0.1rem;
+  margin-right: 0.4rem;
+  padding-left: 0.4rem;
+}
+/* .log-out-img-btn:hover {
+  transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform: scale(1.1);
+  filter: invert(0%) sepia(4%) saturate(3344%) hue-rotate(353deg)
+    brightness(99%) contrast(80%);
+}
+.username-label:hover {
+  transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  color: #000;
+} */
+
+/* end of header */
+/* transactions */
+.transactions {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  height: 106.6rem;
+  width: 100%;
+  border-radius: 3rem;
+  background: rgba(0, 0, 0, 0.9);
+  display: grid;
+  grid-template-rows: minmax(min-content, 6.6rem) minmax(min-content, 90rem) minmax(
+      min-content,
+      9.7rem
+    );
+  align-items: center;
+}
+.transactions-header {
+  grid-row: 1/2;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.36rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.transaction-history-part {
+  grid-row: 2/3;
+  border-top: 0.2rem solid white;
+  border-bottom: 0.2rem solid white;
+  filter: drop-shadow(0px 0.2rem 0.2rem rgba(0, 0, 0, 0.25));
+  height: 90rem;
+  overflow: auto;
+}
+.transactions-history-tx-log:first-child {
+  margin-top: 1.5rem;
+}
+.transactions-history-tx-log {
+  margin: 0.9rem 2.5rem 0.9rem 2.5rem;
+  list-style: none;
+  color: #fff;
+  border-radius: 15px;
+  background: #1e1e1e;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25), 0px 2px 6px 0px #000 inset;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  grid-template-rows: minmax(min-content, 10rem);
+  align-items: center;
+  text-align: center;
+}
+.transaction-history-value {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 5.4px;
+}
+.transaction-history-currency {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 5.4px;
+}
+.transaction-history-time {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2.4px;
+}
+
+.type-of-operation {
+  display: block;
+  margin: auto;
+}
+.stock-prices {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.stock-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  width: 9.8rem;
+  border-radius: 10px;
+  background: #fff;
+  padding: 1.2rem 0.4rem;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 2.1px;
+  color: #1e1e1e;
+}
+/* end of transactions */
+/* card */
+.operations {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  height: 106.6rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.7rem minmax(min-content, 90rem);
+  grid-template-rows: minmax(min-content, 38rem) minmax(min-content, 30rem) minmax(
+      min-content,
+      30rem
+    );
+  grid-row-gap: 4.3rem;
+}
+.card {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  max-height: 38rem;
+  width: 100%;
+  border-radius: 30px;
+  border: 1px solid #fff;
+  background: radial-gradient(
+    258.58% 144.92% at 14.85% 106.05%,
+    #1e1e20 10.32%,
+    #35363b 100%
+  );
+  backdrop-filter: blur(25px);
+}
+.top-part-card {
+  align-items: center;
+  align-self: baseline;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 6.1rem 0 5rem;
+}
+.bottom-part-card {
+  align-items: center;
+  align-self: end;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6.1rem 4.6rem 7.8rem;
+}
+
+.logo-img {
+  font-size: 4rem;
+}
+.card-header-bank-name {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 3.6px;
+  color: #fff;
+  padding-left: 0.6rem;
+  text-decoration: none;
+}
+.card-number {
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 3.6px;
+  cursor: pointer;
+}
+/* end of card */
+/* transfer */
+.transfer {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  border-radius: 30px;
+  background: #1e1e1e;
+  height: 30rem;
+  width: 100%;
+}
+.loan {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  border-radius: 30px;
+  background: #1e1e1e;
+  height: 30rem;
+  width: 100%;
+}
+.loan-header,
+.transfer-header {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 3.6px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  padding: 3rem 0 0 4.4rem;
+}
+.loan-menu,
+.transfer-menu {
+  margin: 1.6rem 3rem 2rem 3rem;
+  height: 21rem;
+  border-radius: 30px;
+  background: #37ff63;
+}
+.transfer-form {
+  display: flex;
+  flex-direction: column;
+}
+.card-num-input,
+.transfer-amount-input {
+  height: 6.5rem;
+  width: 84%;
+  border-radius: 30px;
+  background: #1e1e1e;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25), 0px 2px 6px 0px #000 inset;
+  margin-top: 2.6rem;
+  margin-left: 2.3rem;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  font-family: "Grandstander", cursive;
+  padding-left: 2rem;
+}
+.card-num-input:active {
+  outline: none;
+}
+.amount-and-send {
+  width: 84%;
+  position: relative;
+}
+.transfer-amount-input {
+  height: 6.5rem;
+  width: 100%;
+  border-radius: 30px;
+  background: #1e1e1e;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25), 0px 2px 6px 0px #000 inset;
+  margin-top: 2.6rem;
+  margin-left: 2.3rem;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  font-family: "Grandstander", cursive;
+  padding-left: 2rem;
+}
+.arrow-1 {
+  position: absolute;
+  right: -2.7rem;
+  top: 3.2rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+/* end of transfer */
+/* loan */
+.loan-menu {
+  background: #37e7ff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loan-form {
+  display: flex;
+}
+.loan-amount-input {
+  height: 9rem;
+  border-radius: 30px;
+  background: #1e1e1e;
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+  font-family: "Grandstander", cursive;
+  padding-left: 7.3rem;
+  outline: none;
+  border: none;
+  width: 28.7rem;
+  margin-right: 3rem;
+}
+.loan-amount-input:active {
+  outline: none;
+}
+.arrow-2 {
+  cursor: pointer;
+}
+.info-about-loan {
+  position: absolute;
+  bottom: 0;
+  color: #1e1e1e;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  padding-bottom: 1.2rem;
+}
+@media (max-width: 1440px) {
+  .container {
+    grid-template-columns:
+      minmax(1rem, 1fr) repeat(2, minmax(min-content, 64rem))
+      minmax(1rem, 1fr);
+  }
+}
+@media (max-width: 1280px) {
+  .container {
+    grid-row-gap: 5.8rem;
+    margin-top: 3.1rem;
+    margin-bottom: 3.1rem;
+  }
+  .header-content {
+    padding: 0 2rem;
+  }
+  .stock-prices {
+    gap: 1rem;
+  }
+  .logo-img {
+    height: 3.4rem;
+  }
+  .card-header-bank-name,
+  .transactions-header,
+  .loan-header,
+  .transfer-header,
+  .card-number {
+    font-size: 20px;
+  }
+  .rounds-img {
+    height: 3.8rem;
+  }
+  .nfc-img {
+    height: 3.6rem;
+  }
+  .loan-amount-input {
+    width: 26.7rem;
+    margin-right: 2rem;
+  }
+  .info-about-loan {
+    font-size: 10px;
+  }
+  .type-of-operation {
+    height: 3.3rem;
+  }
+  .transaction-history-value,
+  .transaction-history-currency {
+    font-size: 3rem;
+  }
+  .transaction-history-time {
+    font-size: 1.4rem;
+  }
+  .stock-block {
+    font-size: 1.2rem;
+  }
+  .bottom-part-card {
+    padding: 0 5.1rem 4rem 5rem;
+  }
+  .top-part-card {
+    padding: 4rem 5rem 0 4.5rem;
+  }
+}
+@media (max-width: 1180px) {
+  .container {
+    grid-template-columns: minmax(6rem, 1fr) minmax(min-content, 64rem) minmax(
+        6rem,
+        1fr
+      );
+    grid-template-rows: min-content, repeat(2, minmax(min-content, 64rem));
+  }
+  .transactions {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  .operations {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    height: 102rem;
+    width: 100%;
+    grid-template-columns: 0 minmax(min-content, 90rem);
+    grid-row-gap: 2rem;
+  }
+  .header-content {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    grid-column: 1/4;
+  }
+  .logo-img,
+  .nfc-img,
+  .rounds-img {
+    height: max-content;
+  }
+  .card-header-bank-name,
+  .transfer-header,
+  .card-number {
+    font-size: 24px;
+  }
+  .info-about-loan {
+    font-size: 11px;
+  }
+}
+@media (max-width: 1010px) {
+  .header-block-1 {
+    padding: 0.8rem 0 0 2rem;
+  }
+}
+@media (max-width: 950px) {
+  .header-balance-text {
+    font-size: 2.8rem;
+  }
+  .header-bank-name {
+    font-size: 2.2rem;
+  }
+  .header-bank-slogan {
+    font-size: 1.8rem;
+  }
+  .header-balance-value {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .header-login {
+    font-size: 4rem;
+  }
+  .profile-label {
+    font-size: 2.8rem;
+  }
+  .log-out-img-btn {
+    height: 2.7rem;
+  }
+  .username-label {
+    font-size: 1.4rem;
+  }
+  .user-object {
+    height: 1.3rem;
+  }
+  .header-block-1 {
+    padding: 0.8rem 0 0 2.5rem;
+  }
+}
+@media (max-width: 880px) {
+  .container {
+    grid-row-gap: 2rem;
+  }
+  .header-block-2 {
+    justify-content: center;
+  }
+  .header-bank-slogan {
+    display: none;
+  }
+  .header-content {
+    padding-bottom: 20px;
+  }
+  .header-balance-text {
+    display: none;
+  }
+  .header-block-1,
+  .header-block-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .header-balance-value {
+    font-size: 2.2rem;
+    margin-top: 0;
+  }
+  .header-balance-dollar {
+    font-size: 2.2rem;
+  }
+  .profile-label,
+  .user-object {
+    display: none;
+  }
+  .log-out-img-btn {
+    padding-left: 0.3rem;
+    padding-top: 0;
+    padding-bottom: 0.5rem;
+    display: block;
+    margin: auto;
+  }
+  .header-login {
+    font-size: 3.3rem;
+  }
+  .stock-prices {
+    gap: 0.8rem;
+  }
+}
+@media (max-width: 690px) {
+  .container {
+    grid-template-columns: minmax(3rem, 1fr) minmax(min-content, 64rem) minmax(
+        3rem,
+        1fr
+      );
+  }
+  .header-block-1,
+  .header-block-2,
+  .header-block-3 {
+    border: none;
+    justify-content: center;
+  }
+  .header-block-2 {
+    width: 10rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .logo-img {
+    height: 5.2rem;
+    text-align: center;
+  }
+  .header-bank-name {
+    display: none;
+  }
+  .header-block-1,
+  .header-block-3 {
+    width: auto;
+    border-bottom: 2px solid #1e1e1e;
+  }
+  .stock-5 {
+    display: none;
+  }
+  .stock-prices {
+    gap: 2.5rem;
+  }
+  .loan-amount-input {
+    width: 25.7rem;
+    margin-right: 1rem;
+    padding-left: 5.3rem;
+  }
+  .info-about-loan {
+    font-size: 0.9rem;
+  }
+  .login-btn:hover {
+    background-color: transparent;
+  }
+  .login-btn:hover .header-login {
+    color: #1e1e1e;
+    transition: none;
+    transform: none;
+  }
+}
+@media (max-width: 592px) {
+  .stock-prices {
+    gap: 1rem;
+  }
+  .transaction-history-time {
+    font-size: 1.15rem;
+  }
+  .transaction-history-value,
+  .transaction-history-currency {
+    font-size: 2.6rem;
+  }
+  .transactions-history-tx-log {
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 550px) {
+  .loan-amount-input {
+    width: 19.7rem;
+    font-size: 24px;
+  }
+  .info-about-loan {
+    font-size: 0.85rem;
+  }
+  .rounds-img {
+    height: 3.4rem;
+  }
+  .nfc-img {
+    height: 3.2rem;
+  }
+  .card-header-bank-name,
+  .card-number {
+    font-size: 2.2rem;
+  }
+  .logo-img-white {
+    padding-right: 0.2rem;
+  }
+  .type-of-operation {
+    height: 3.1rem;
+  }
+}
+
+.opacityForEl {
+  display: none;
+}
+.red-text {
+  color: #ff0000;
+  border-bottom: 0.2rem solid #fa0404;
+}
+@media (max-width: 530px) {
+  .stock-block {
+    font-size: 1.1rem;
+    width: 8.3rem;
+  }
+}

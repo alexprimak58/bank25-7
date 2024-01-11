@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank 25/7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander:wght@500&family=Inter:wght@400;500;700;900&family=NTR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/png" href="img/logo-star.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/cb7293783e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+  </head>
+  <body>
+    <div class="fullscreen-container opacityForEl">
+      <div class="forms-wrapper">
+        <img class="x-btn" src="img/close.svg" />
+        <form class="login-form">
+          <h3 class="form-heading">Login</h3>
+          <div class="field email-field">
+            <input
+              type="email"
+              class="form-input form-input-1"
+              placeholder="Email"
+            />
+            <img src="img/email.svg" class="img-email" />
+          </div>
+          <div class="field password-field">
+            <input
+              type="password"
+              class="form-input form-input-2"
+              placeholder="Password"
+            />
+            <img src="img/lock.svg" class="img-lock" />
+          </div>
+          <p class="wrong-passwd-or-email opacityForEl">
+            Wrong password or email!
+          </p>
+          <input type="submit" value="Login" class="form-btn" />
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <!-- header  -->
+      <ul class="header-content">
+        <li class="header-block header-block-1">
+          <p class="header-balance-text">Balance</p>
+          <div class="header-balance-value">
+            <i class="fa-solid fa-dollar-sign header-balance-dollar"></i>
+            <p class="balance-value">0000.00</p>
+          </div>
+        </li>
+        <li class="header-block header-block-2">
+          <div class="logo-and-name">
+            <img src="img/logo-star.svg" class="logo-img" />
+            <a href="#" class="header-bank-name">Bank 25/7</a>
+          </div>
+          <p class="header-bank-slogan">
+            the best bank <br />
+            in its field
+          </p>
+        </li>
+        <li class="header-block header-block-3">
+          <div class="login-btn">
+            <a href="#" class="header-login">login</a>
+          </div>
+          <div class="logined-user-header opacityForEl">
+            <div class="label-and-log-out">
+              <p class="profile-label">Profile</p>
+              <img src="img/log-out-btn.svg" class="log-out-img-btn" />
+            </div>
+            <div class="username-field">
+              <img src="img/user.svg" class="user-object" />
+              <a href="#" class="username-label"> alexprimak.bank </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- end of header -->
+      <!-- transactions -->
+      <section class="transactions">
+        <p class="transactions-header">Transactions</p>
+        <div class="transaction-history-part">
+          <ul class="transaction-history"></ul>
+        </div>
+        <ul class="stock-prices">
+          <li class="stock-block stock-1">
+            <p class="stock-label stock-label-1">SPX</p>
+            <p class="stock-value stock-value-1">$4604</p>
+          </li>
+          <li class="stock-block stock-2">
+            <p class="stock-label stock-label-2">TSLA</p>
+            <p class="stock-value stock-value-2">$4240</p>
+          </li>
+          <li class="stock-block stock-3">
+            <p class="stock-label stock-label-3">AAPL</p>
+            <p class="stock-value stock-value-3">$195</p>
+          </li>
+          <li class="stock-block stock-4">
+            <p class="stock-label stock-label-4">NFLX</p>
+            <p class="stock-value stock-value-4">$453</p>
+          </li>
+          <li class="stock-block stock-5">
+            <p class="stock-label stock-label-5">META</p>
+            <p class="stock-value stock-value-5">$332</p>
+          </li>
+        </ul>
+      </section>
+      <section class="operations">
+        <section class="card">
+          <div class="top-part-card">
+            <div class="logo-and-name">
+              <img src="img/logo-white.svg" class="logo-img-white" />
+              <a href="#" class="card-header-bank-name">Bank 25/7</a>
+            </div>
+            <img src="img/2roundsInCard.svg" class="rounds-img" />
+          </div>
+          <div class="bottom-part-card">
+            <p class="card-number">**** **** **** ****</p>
+            <img src="img/nfc.svg" class="nfc-img" />
+          </div>
+        </section>
+        <section class="transfer">
+          <p class="transfer-header">Transfer to the card</p>
+          <div class="transfer-menu">
+            <form class="transfer-form">
+              <input
+                type="text"
+                class="card-num-input"
+                placeholder="Card number"
+              />
+
+              <div class="amount-and-send">
+                <input
+                  type="text"
+                  class="transfer-amount-input"
+                  placeholder="Enter amount"
+                />
+                <img src="img/arrow.svg" class="arrow-btn-img arrow-1" />
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="loan">
+          <p class="loan-header">Take out a loan</p>
+          <div class="loan-menu">
+            <form class="loan-form">
+              <input
+                type="text"
+                class="loan-amount-input"
+                placeholder="Enter amount"
+              />
+              <img src="img/arrow-big.svg" class="arrow-2" />
+            </form>
+            <p class="info-about-loan">
+              You can take only 1 loan with up to 25% of balance
+            </p>
+          </div>
+        </section>
+      </section>
+      <!-- end of transactions -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
