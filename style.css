@@ -881,6 +881,22 @@ body {
     font-size: 1.1rem;
     width: 8.3rem;
   }
+  .forms-wrapper {
+    padding: 1.5rem;
+    width: 32rem;
+    height: 32rem;
+  }
+  .form-heading {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  .form-btn {
+    margin-top: 2.5rem;
+  }
 }
 @media (max-width: 500px) {
   /* .container {
@@ -946,5 +962,23 @@ body {
 @media (max-width: 400px) {
   .loan-amount-input {
     width: 14.2rem;
+  }
+  .forms-wrapper {
+    padding: 1rem;
+    width: 29rem;
+    height: 29rem;
+  }
+  .img-lock {
+    height: 2rem;
+  }
+  .img-email {
+    height: 1.8rem;
+  }
+  .x-btn {
+    height: 2.5rem;
+  }
+  .form-heading {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
   }
 }

@@ -156,7 +156,7 @@ submitForm.addEventListener("click", (e) => {
   }
   if (currentAcc?.password !== Number(passwdField.value)) {
     wrongPasswdOrEmailText.classList.remove("opacityForEl");
-    submitForm.style.marginTop = "3rem";
+    submitForm.style.marginTop = "1.5rem";
     emailFieldForRed.style.borderBottom =
       passwordFieldForRed.style.borderBottom = "0.2rem solid #fa0000";
   }
@@ -165,6 +165,7 @@ submitForm.addEventListener("click", (e) => {
 // implementing logout
 logOutBtn.addEventListener("click", (e) => {
   e.preventDefault();
+
   loggedOutFunction();
 });
 
