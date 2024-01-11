@@ -59,7 +59,7 @@ const account1 = {
     "3 hours ago",
     "2 hours ago",
     "2 hours ago",
-    "1 hour ago",
+    "1 hour ago ",
     "15 mins ago",
   ],
   password: 1111,
@@ -310,12 +310,16 @@ const changeStockValue = (data, i) => {
   stocksValues[i].textContent = `$${Math.round(data.price)}`;
 };
 const getStockPrice = async (tickers, i) => {
-  let TDKEY = "5235048dd400486eb7aa94d9d0b23143";
-  const res = await fetch(
-    `https://api.twelvedata.com/price?symbol=${tickers}&apikey=${TDKEY}`
-  );
-  const data = await res.json();
-  changeStockValue(data, i);
+  try {
+    let TDKEY = "5235048dd400486eb7aa94d9d0b23143";
+    const res = await fetch(
+      `https://api.twelvedata.com/price?symbol=${tickers}&apikey=${TDKEY}`
+    );
+    const data = await res.json();
+    changeStockValue(data, i);
+  } catch (err) {
+    console.log(err);
+  }
 };
 getStockPrice(stocks[0], 0);
 getStockPrice(stocks[1], 1);
